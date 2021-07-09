@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             var n1: Double = "${num1.text}".toDouble()
             var n2: Double = "${num2.text}".toDouble()
 
-            var resultado = (n1*100) / n2
+            var resultado = (n1/100) * n2
             exibirResultado(resultado.toString())
         }
 
