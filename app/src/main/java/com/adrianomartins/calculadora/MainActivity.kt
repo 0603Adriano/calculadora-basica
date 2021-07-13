@@ -78,12 +78,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnFatorial.setOnClickListener {
-            var n1: Int = "${num1.text}".toInt()
+            val n1: Int = "${num1.text}".toInt()
+            var valor = n1
 
-            for (i in n1 - 1 downTo 1) n1 *= i
-            var resultado: Int = n1
+            for (i in valor - 1 downTo 1) valor *= i
 
-            exibirResultado(resultado.toString())
+            val resultado = "$n1! = $valor"
+
+            exibirResultado(resultado)
         }
     }
 
