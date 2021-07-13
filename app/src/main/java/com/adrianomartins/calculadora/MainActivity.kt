@@ -64,19 +64,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnElev.setOnClickListener() {
-            /* var n1: Int = "${num1.text}".toInt()
-             var n2 = "${num2.text}".toInt()
+            var n1: Int = "${num1.text}".toInt()
+            var n2: Int = "${num2.text}".toInt()
+            var resultado = 0
+            var elevado = n1
 
-             var cont = 1
+            for (i in 2..n2) {
+                resultado = elevado * n1
+                elevado *= n1
+            }
 
-             var fatora = 0
-
-             for (cont in 3 ){
-                 fatora += n1 * n2
-
-             }
-
-             exibirResultado(resultado.toString())*/
+            exibirResultado(resultado.toString())
         }
 
         btnFatorial.setOnClickListener() {
