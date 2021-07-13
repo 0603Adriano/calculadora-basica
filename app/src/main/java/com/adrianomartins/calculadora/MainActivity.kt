@@ -12,60 +12,60 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var num1: EditText = findViewById(R.id.editTextNum1)
-        var num2: EditText = findViewById(R.id.editTextNum2)
+        val num1: EditText = findViewById(R.id.editTextNum1)
+        val num2: EditText = findViewById(R.id.editTextNum2)
 
-        var btnSoma: Button = findViewById(R.id.btnSoma)
-        var btnSub: Button = findViewById(R.id.btnSub)
-        var btnMult: Button = findViewById(R.id.btnMult)
-        var btnDiv: Button = findViewById(R.id.btnDiv)
-        var btnPercent: Button = findViewById(R.id.btnPorcentagem)
-        var btnElev: Button = findViewById(R.id.btnElevado)
-        var btnFatorial: Button = findViewById(R.id.btnFatorar)
+        val btnSoma: Button = findViewById(R.id.btnSoma)
+        val btnSub: Button = findViewById(R.id.btnSub)
+        val btnMult: Button = findViewById(R.id.btnMult)
+        val btnDiv: Button = findViewById(R.id.btnDiv)
+        val btnPercent: Button = findViewById(R.id.btnPorcentagem)
+        val btnElev: Button = findViewById(R.id.btnElevado)
+        val btnFatorial: Button = findViewById(R.id.btnFatorar)
 
-        btnSoma.setOnClickListener() {
-            var n1: Double = "${num1.text}".toDouble()
-            var n2: Double = "${num2.text}".toDouble()
+        btnSoma.setOnClickListener {
+            val n1: Double = "${num1.text}".toDouble()
+            val n2: Double = "${num2.text}".toDouble()
 
-            var resultado: Double = n1 + n2
+            val resultado: Double = n1 + n2
             exibirResultado(resultado.toString())
         }
 
-        btnSub.setOnClickListener() {
-            var n1: Double = "${num1.text}".toDouble()
-            var n2: Double = "${num2.text}".toDouble()
+        btnSub.setOnClickListener {
+            val n1: Double = "${num1.text}".toDouble()
+            val n2: Double = "${num2.text}".toDouble()
 
-            var resultado: Double = n1 - n2
+            val resultado: Double = n1 - n2
             exibirResultado(resultado.toString())
         }
 
-        btnMult.setOnClickListener() {
-            var n1: Double = "${num1.text}".toDouble()
-            var n2: Double = "${num2.text}".toDouble()
+        btnMult.setOnClickListener {
+            val n1: Double = "${num1.text}".toDouble()
+            val n2: Double = "${num2.text}".toDouble()
 
-            var resultado: Double = n1 * n2
+            val resultado: Double = n1 * n2
             exibirResultado(resultado.toString())
         }
 
-        btnDiv.setOnClickListener() {
-            var n1: Double = "${num1.text}".toDouble()
-            var n2: Double = "${num2.text}".toDouble()
+        btnDiv.setOnClickListener {
+            val n1: Double = "${num1.text}".toDouble()
+            val n2: Double = "${num2.text}".toDouble()
 
-            var resultado: Double = n1 / n2
+            val resultado: Double = n1 / n2
             exibirResultado(resultado.toString())
         }
 
-        btnPercent.setOnClickListener() {
-            var n1: Double = "${num1.text}".toDouble()
-            var n2: Double = "${num2.text}".toDouble()
+        btnPercent.setOnClickListener {
+            val n1: Double = "${num1.text}".toDouble()
+            val n2: Double = "${num2.text}".toDouble()
 
-            var resultado = (n1 / 100) * n2
+            val resultado = (n1 / 100) * n2
             exibirResultado(resultado.toString())
         }
 
-        btnElev.setOnClickListener() {
-            var n1: Int = "${num1.text}".toInt()
-            var n2: Int = "${num2.text}".toInt()
+        btnElev.setOnClickListener {
+            val n1: Int = "${num1.text}".toInt()
+            val n2: Int = "${num2.text}".toInt()
             var resultado = 0
             var elevado = n1
 
@@ -77,18 +77,19 @@ class MainActivity : AppCompatActivity() {
             exibirResultado(resultado.toString())
         }
 
-        btnFatorial.setOnClickListener() {
-            var n1: Double = "${num1.text}".toDouble()
-            var n2: Double = "${num2.text}".toDouble()
+        btnFatorial.setOnClickListener {
+            var n1: Int = "${num1.text}".toInt()
 
-            var resultado = (n1 * 100) / n2
+            for (i in n1 - 1 downTo 1) n1 *= i
+            var resultado: Int = n1
+
             exibirResultado(resultado.toString())
         }
     }
 
     fun exibirResultado(resultado: String) {
-        var txtResultado: TextView = findViewById(R.id.txtResultado)
-        txtResultado.setText(resultado)
+        val txtResultado: TextView = findViewById(R.id.txtResultado)
+        txtResultado.text = resultado
     }
 
 }
