@@ -27,52 +27,59 @@ class MainActivity : AppCompatActivity() {
             val n1: Double = "${num1.text}".toDouble()
             val n2: Double = "${num2.text}".toDouble()
 
-            val resultado: Double = n1 + n2
-            exibirResultado(resultado.toString())
+            val soma = n1 + n2
+            val resultado = "$n1 + $n2 = $soma"
+            exibirResultado(resultado)
         }
 
         btnSub.setOnClickListener {
             val n1: Double = "${num1.text}".toDouble()
             val n2: Double = "${num2.text}".toDouble()
 
-            val resultado: Double = n1 - n2
-            exibirResultado(resultado.toString())
+            val sub = n1 - n2
+            val resultado = "$n1 - $n2 = $sub"
+            exibirResultado(resultado)
         }
 
         btnMult.setOnClickListener {
             val n1: Double = "${num1.text}".toDouble()
             val n2: Double = "${num2.text}".toDouble()
 
-            val resultado: Double = n1 * n2
-            exibirResultado(resultado.toString())
+            val mult = n1 * n2
+            val resultado = "$n1 * $n2 = $mult"
+            exibirResultado(resultado)
         }
 
         btnDiv.setOnClickListener {
             val n1: Double = "${num1.text}".toDouble()
             val n2: Double = "${num2.text}".toDouble()
 
-            val resultado: Double = n1 / n2
-            exibirResultado(resultado.toString())
+            val div = n1 / n2
+            val resultado = "$n1 / $n2 = $div"
+            exibirResultado(resultado)
         }
 
         btnPercent.setOnClickListener {
             val n1: Double = "${num1.text}".toDouble()
             val n2: Double = "${num2.text}".toDouble()
 
-            val resultado = (n1 / 100) * n2
-            exibirResultado(resultado.toString())
+            val percent = (n1 / 100) * n2
+            val resultado = "$n1 % de $n2 = $percent"
+            exibirResultado(resultado)
         }
 
         btnElev.setOnClickListener {
             val n1: Int = "${num1.text}".toInt()
             val n2: Int = "${num2.text}".toInt()
-            var resultado = 0
+            var operation = 0
             var elevado = n1
 
             for (i in 2..n2) {
-                resultado = elevado * n1
+                operation = elevado * n1
                 elevado *= n1
             }
+
+            val resultado = "$n1 ^ $n2 = $operation"
 
             exibirResultado(resultado.toString())
         }
@@ -83,9 +90,13 @@ class MainActivity : AppCompatActivity() {
 
             for (i in valor - 1 downTo 1) valor *= i
 
-            val resultado = "$n1! = $valor"
+            var downToNumber = ""
 
-            exibirResultado(resultado)
+            for (i in n1 downTo 2){
+                downToNumber += "$i."
+            }
+
+            ("$n1! = ${downToNumber}1 = $valor".apply { exibirResultado(this) })
         }
     }
 
